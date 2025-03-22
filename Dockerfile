@@ -33,9 +33,7 @@ RUN mkdir -p /var/run/sshd && \
     echo "AllowUsers samir" >> /etc/ssh/sshd_config
 
 # Install Ngrok
-RUN wget -O ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && \
-    unzip ngrok.zip && mv ngrok /usr/local/bin/ngrok && \
-    rm ngrok.zip
+RUN curl -fsSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.tgz | tar -xz -C /usr/local/bin/
 
 # Expose all ports
 EXPOSE 0-65535
